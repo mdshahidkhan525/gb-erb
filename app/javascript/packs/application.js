@@ -10,11 +10,16 @@ import "channels"
 
 require('jquery')
 require('@popperjs/core')
+require('select2')
+window.moment = require('moment')
 
 import 'bootstrap'
 require('../stylesheets/application.scss')
 
+import 'packs/hyper-theme/layout'
+import 'packs/hyper-theme/hyper'
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require('jquery')
