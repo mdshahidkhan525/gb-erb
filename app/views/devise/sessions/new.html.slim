@@ -1,0 +1,48 @@
+.authenticate-bg [data-layout-config="{\"darkMode\":false}"]
+  .account-pages.pt-2.pt-sm-5.pb-4.pb-sm-5
+    .container
+      .row.justify-content-center
+        .col-xxl-4.col-lg-5
+          .card
+            .card-header.pt-4.pb-4.text-center.bg-primary
+              a[href="index.html"]
+                span
+                  img[src="assets/images/logo.png" alt="" height="18"]
+            .card-body.p-4
+              .text-center.w-75.m-auto
+                h4.text-dark-50.text-center.mt-0.fw-bold
+                  | Sign In
+                p.text-muted.mb-4
+                  | Enter your email address and password to access admin panel.
+              = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                .mb-3
+                  label.form-label[for="emailaddress"]
+                    | Email address
+                  = f.email_field :email, autofocus: true, autocomplete: "email", id:'emailaddress', class:'form-control', required:"", placeholder:"Enter your email"
+                .mb-3
+                  a.text-muted.float-end[href="pages-recoverpw.html"]
+                    small
+                      | Forgot your password?
+                  label.form-label[for="password"]
+                    | Password
+                  .input-group.input-group-merge
+                    = f.password_field :password, autocomplete: "current-password" ,id:"#password",class:"form-control",placeholder:"Enter your password"
+                    .input-group-text[data-password="false"]
+                      span.password-eye
+                .mb-3.mb-3
+                  .form-check
+                    = f.check_box :remember_me ,id: "checkbox-signin", class: "form-check-input"
+                    label.form-check-label[for="checkbox-signin"]
+                      | Remember me
+                .mb-3.mb-0.text-center
+                  = f.submit "Log in" ,class:"button btn btn-primary"
+                    |  Log In 
+          .row.mt-3
+            .col-12.text-center
+              p.text-muted
+                | Don't have an account? 
+                a.text-muted.ms-1[href="pages-register.html"]
+                  b
+                    | Sign Up
+  footer.footer.footer-alt
+    |  2018 - 2021 © Hyper - Coderthemes.com 
